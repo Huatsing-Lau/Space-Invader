@@ -190,13 +190,15 @@ if __name__ == "__main__":
                 running = False
 
         #Kontrola statku
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
+        pygame.event.pump()
 
-                PlayerX -= 1;
-            if event.key == pygame.K_RIGHT:
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
 
-                PlayerX += 1;
+            PlayerX -= 1;
+        if keys[pygame.K_RIGHT]:
+
+             PlayerX += 1;
             #if event.key == pygame.K_SPACE:
                 #if Bullet_state == "ready":
                 #    bullet_sound = mixer.Sound('laser.wav')
